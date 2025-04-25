@@ -1,1 +1,157 @@
-Hello, Git!
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: linear-gradient(to right, rgb(20, 20, 20), rgb(17, 17, 17));
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    background-color: rgb(39, 39, 39);
+    height: 65px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(19, 19, 19);
+    opacity: 86%;
+}
+
+.nav img {
+    height: 35px;
+    margin-left: 35px;
+}
+
+.nav button {
+    background: none;
+    border: none;
+}
+
+.nav ion-icon {
+    color: white;
+    height: 22px;
+    width: 22px;
+    justify-self: right;
+    margin: 3px;
+    overflow: hidden;
+}
+
+.nav ion-icon:hover {
+    animation: popUp 0.7s forwards;
+}
+
+@keyframes popUp {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-18px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#username {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 10px;
+}
+
+.left-sec {
+    display: flex;
+    align-items: center;
+}
+
+.right-sec {
+    margin-right: 35px;
+}
+
+#chat-area {
+    flex: 1; 
+    padding: 10px;
+    overflow-y: auto; 
+    background: transparent; 
+    color: white; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px; 
+}
+
+#chat-area::-webkit-scrollbar {
+    display: none; 
+}
+
+#chat-area {
+    scrollbar-width: none; 
+}
+
+#chat-area {
+    -ms-overflow-style: none; 
+}
+
+#message-box {
+    position: fixed; 
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 90%; 
+    max-width: 1880px; 
+    display: flex;
+    justify-content: center;
+}
+
+#message-box input {
+    background-color: rgb(39, 39, 39);
+    border: solid 1px rgb(19, 19, 19);
+    height: 45px;
+    width: 100%; 
+    border-radius: 8px;
+    text-indent: 10px;
+    position: relative;
+    outline: none;
+    transition: border-color 0.3s ease;
+    border-image-slice: 1;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+#message-box input:focus {
+    border-color: transparent;
+    animation: gradient-spin 5s linear infinite;
+}
+
+@keyframes gradient-spin {
+    0% {
+        border-image-source: linear-gradient(0deg, #00c3ff, #00c3ff, #00c3ff);
+    }
+    50% {
+        border-image-source: linear-gradient(360deg, black, black, black);
+    }
+    100% {
+        border-image-source: linear-gradient(0deg, #00c3ff, #00c3ff, #00c3ff);
+    }
+}
+
+@media (max-width: 767px) {
+    #message-box {
+        width: 90%; 
+        bottom: 10px; 
+    }
+
+    #message-box input {
+        height: 40px; 
+        font-size: 14px; 
+    }
+}
+
+@media (max-width: 480px) {
+    #message-box input {
+        height: 35px; 
+        font-size: 12px; 
+    }
+}
